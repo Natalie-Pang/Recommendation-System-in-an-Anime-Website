@@ -14,7 +14,7 @@ Recommendation|By entering an anime, a list of anime with similar hypothesis wil
 AnimeList|In this page, you can browse all animes. You can search by name or filter by genres.
 Discussion|In the discussion forum, you can either create a new discussion, or join an existing discussion to chat with others.
 Anaylsis|In this page, different graphs related to anime, such as growth of anime and most popular genres, will be displayed with detailed description. 
-News|In this page, the top 5 most popular anime at the moment will be shown. You can also look for upcoming events at different countries by choosing a specifiic country.
+Event|In this page, data gathered from web crawling are displayed
 Account|You can register, log in, or log out here. If you have created an account, you can change your profile picture.
 
 
