@@ -1,0 +1,78 @@
+:root{
+    --basic-font-size: 1.1rem;
+    --header-font-size: 1.8rem;
+    --font-semi-bold: 600;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Laptop or computer screen */
+@media screen and (min-width: 1118px) {
+    body{
+        padding-top: 5rem;
+    }
+}
+
+/* phone and small screen */
+@media screen and (max-width: 1118px) {
+    body{
+        padding-top: 3.5rem;
+    }
+}
+
+body{
+    background-color: hsl(219, 25%, 25%);
+}
+
+.admin-intro{
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 1.4rem;
+}
+
+.admin-intro h1{
+    font-size: var(--header-font-size);
+}
+
+.admin-intro p{
+    font-size: var(--basic-font-size);
+}
+
+.user-table{
+    font-size: var(--basic-font-size);
+    display: block;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    margin-inline: 10rem;
+    max-height: 25rem;
+    overflow-y: auto; 
+}
+
+.user-table table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th, td{
+    padding-inline: 1.3rem;
+    padding-block: .4rem;
+    border-bottom: 1px solid #DDD;
+}
+
+.user-table button{
+    font-size: var(--basic-font-size);
+    border: none;
+    color: red;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.user-table button:hover{
+    text-decoration: underline;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="../static/css/header.css"/>
+        <link rel="stylesheet" href="../static/css/discussion.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="icon" href="../static/images/general/web_icon.png">
+        <title>Home</title>
+    </head>
+    <body>
+        <header class="header">
+            <nav class="nav container">
+                <div class="nav__data">
+                    <a href="{{ url_for('views.home')}}" class="nav__logo">
+                        <img src="../static/images/general/web_icon.png" style="width: 1.5rem;"> AnimeExplorer
+                    </a>
+                    
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line nav__burger"></i>
+                        <i class="ri-close-line nav__close"></i>
+                    </div>
+                </div>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li><a href="{{ url_for('views.home')}}" class="nav__link">Home</a></li>
+                        <li><a href="{{ url_for('views.events')}}" class="nav__link">Events</a></li>
+                        <li><a href="{{ url_for('views.analysis')}}" class="nav__link">Analysis</a></li>
+                        <li><a href="{{ url_for('views.recommend_name')}}" class="nav__link">Recommend</a></li>
+                        <li><a href="{{ url_for('views.anime_list')}}" class="nav__link">Anime List</a></li>
+                        <li><a href="{{ url_for('views.music')}}" class="nav__link">Music</a></li>
+                        <li><a href="{{ url_for('views.discussion')}}" class="nav__link">Discussion</a></li>
+                        <li class="dropdown__item">
+                            <div class="nav__link">
+                                Account <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                            </div>
+                            <ul class="dropdown__menu">
+                                {% if current_user.is_anonymous %}
+                                <li>
+                                    <a href="{{ url_for('auth.sign_up')}}" class="dropdown__link">SignUp</a>
+                                </li>
+                                {% endif %}
+                                {% if current_user.is_anonymous %}
+                                <li>
+                                    <a href="{{ url_for('auth.login')}}" class="dropdown__link">Login</a>
+                                </li>
+                                {% endif %}
+                                {% if current_user.is_authenticated %}
+                                <li>
+                                    <a href="{{ url_for('auth.profile')}}" class="dropdown__link">Profile</a>
+                                </li>
+                                {% endif %}
+                                {% if current_user.is_authenticated and current_user.role == 'admin' %}
+                                <li>
+                                    <a href="{{ url_for('auth.admin')}}" class="dropdown__link">Admin</a>
+                                </li>
+                                {% endif %}
+                                {% if current_user.is_authenticated %}
+                                <li>
+                                    <a href="{{ url_for('auth.logout')}}" class="dropdown__link">Logout</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="discussion">
+            <div class="discussion-intro">
+                <div class="discussion-header">
+                    <h1><i class="ri-discuss-line"></i> Discussion</h1>
+                </div>
+                <div class="discussion-rules">
+                    <p>Click in the discussion that you are interested in and feel free to chat with others</p>
+                    <p>To create new discussion <a href="{{ url_for('views.create_discussion') }}" style="color: #e172ff; text-decoration: underline;">click here</a></p>
+                </div>
+            </div>
+            <div class="discussion-section">
+                <div class="discussion-container">
+                    {% for discussion in discussions %}
+                        <div class="discussion-item">
+                            <div class="delete-button">
+                                {% if current_user.is_authenticated and (current_user.role == 'admin' or current_user.id == discussion.user_id) %}
+                                    <form onsubmit="return confirm('Proceed to delete this discussion?')" method="post" action="{{ url_for('views.delete_discussion', discussion_id=discussion.id) }}">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                {% endif %}
+                            </div>
+                            <h2>Discussion #{{ discussion.id }}</h1>
+                            <h3>{{ discussion.title }}</h3>
+                            <div class="user-info">
+                                <img class="user-icon" src="{{ url_for('static', filename='images/user_icon/' + discussion.user.profile_picture) }}" alt="Profile Picture">
+                                <p class="username">{{ discussion.user.username }}</p>
+                            </div>
+                            <p>Date: {{ discussion.date.strftime('%Y-%m-%d %H:%M') }}</p>
+                            <div class="button-container">
+                                <a href="{{ url_for('views.view_discussion', discussion_id=discussion.id) }}" class="view-message-button">View Messages</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="/static/index.js"></script>
+    </body>
+    <footer>
+        <div class="footer">
+            <div class="row">
+                <a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-line"></i></a>
+                <a href="https://twitter.com/?lang=en" target="_blank"><i class="ri-twitter-line"></i></a>
+                <a href="https://en-gb.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="ri-youtube-fill"></i></a>
+            </div>
+            <div class="row">
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                ANIMEEXPLORER Copyright © 2024 Explorer - All rights reserved || Designed By: Natalie 
+            </div>
+        </div>
+    </footer>
+</html>

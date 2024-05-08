@@ -1,0 +1,155 @@
+:root{
+    --basic-font-size: 1rem;
+    --header-font-size: 1.8rem;
+    --font-semi-bold: 600;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Laptop or computer screen */
+@media screen and (min-width: 1118px) {
+    body{
+        padding-top: 5rem;
+    }
+}
+
+/* phone and small screen */
+@media screen and (max-width: 1118px) {
+    body{
+        padding-top: 3.5rem;
+    }
+}
+
+body{
+    background-color: hsl(219, 25%, 25%);
+}
+
+.discussion{
+    font-size: var(--basic-font-size);
+}
+
+.discussion-title-section{
+    background-color: #ccc;
+    border-radius: 3rem;
+    padding-inline: 2rem;
+    padding-block: 2rem;
+}
+
+.discussion-intro{
+    margin-bottom: 2rem;
+}
+
+.discussion-header{
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: var(--font-semi-bold);
+    color: #fff;
+}
+
+.discussion-rules{
+    text-align: center;
+    font-size: var(--basic-font-size);
+    color: #fff;
+}
+
+.discussion-section{
+    background-color: #ffffff;
+    height: 100%;
+    padding-inline: 2.5rem;
+    padding-block: 1.5rem;
+}
+
+.button-container{
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    font-size: 0.9rem;
+    width: 8rem;
+    height: 1.8rem;
+    padding-top: .1rem;
+    border-radius: 1.2rem;
+    background: hsl(219, 50%, 66%);
+    margin-top: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-bottom: 1rem;
+}
+
+.messages-container {
+    position: relative;
+    background-color: #e0e0e0;
+    padding-inline: 2rem;
+    padding-block: 2rem;
+    border-radius: 3rem;
+    margin-block: 1rem;
+}
+
+.delete-button {
+    position: absolute;
+    top: 1rem;
+    right: 3rem;
+}
+
+.delete-button button{
+    border: none;
+    color: red;
+    background-color: #ffb1b1bb;
+    cursor: pointer;
+}
+
+.messages-container:nth-child(odd) {
+    background-color: #e0e0e0;
+}
+
+.messages-container:nth-child(even) {
+    background-color: #d0d0d0; 
+}
+
+.user-info {
+    display: flex;
+}
+
+.user-icon{
+    object-fit: cover;
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 1.25rem;
+    margin-right: 1rem;
+    margin-bottom: .5rem;
+}
+
+.username{
+    padding-top: .3rem;
+}
+
+.add-message{
+    font-size: var(--basic-font-size);
+}
+
+.add-message textarea{
+    border-radius: .8rem;
+    padding-inline: .5rem;
+    width: 100%;
+}
+
+.add-message button{
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    font-size: 0.9rem;
+    width: 8rem;
+    height: 1.8rem;
+    padding-top: .1rem;
+    border-radius: 1.2rem;
+    background: hsl(219, 50%, 66%);
+    margin-top: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-bottom: 1rem;
+}

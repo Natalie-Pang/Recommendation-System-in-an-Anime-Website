@@ -1,0 +1,79 @@
+:root{
+    --basic-font-size: 1.2rem;
+    --header-font-size: 2rem;
+    --font-semi-bold: 600;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Laptop or computer screen */
+@media screen and (min-width: 1118px) {
+    body{
+        padding-top: 5rem;
+    }
+}
+
+/* phone and small screen */
+@media screen and (max-width: 1118px) {
+    body{
+        padding-top: 3.5rem;
+    }
+}
+
+body{
+    background-color: hsl(219, 25%, 25%);
+}
+
+.error-page{
+    margin-block: 2rem;
+    margin-inline: 3rem;
+}
+
+
+.error-header{
+    text-align: center;
+    color: #ffffff;
+}
+
+.error-header h1{
+    font-size: var(--header-font-size);
+    font-weight: var(--font-semi-bold);
+}
+
+.anya-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.anya-image img{
+    width: 45rem;
+    object-fit: cover;
+}
+
+.instruction{
+    margin-inline: 15rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.instruction p{
+    font-size: var(--basic-font-size);
+}   
+
+.instruction-2{
+    margin-top: .5rem;
+    text-align: center;
+}
+
+.instruction-2 a{
+    color: #ffffff;
+    text-decoration: underline;
+}

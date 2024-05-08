@@ -1,0 +1,90 @@
+:root{
+    --basic-font-size: 1.1rem;
+    --header-font-size: 1.8rem;
+    --font-semi-bold: 600;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Laptop or computer screen */
+@media screen and (min-width: 1118px) {
+    body{
+        padding-top: 5rem;
+    }
+}
+
+/* phone and small screen */
+@media screen and (max-width: 1118px) {
+    body{
+        padding-top: 3.5rem;
+    }
+}
+
+body{
+    background-color: hsl(219, 25%, 25%);
+}
+
+.analysis-intro{
+    font-size: var(--basic-font-size);
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.analysis-intro h2{
+    font-size: 1.4rem;
+    font-weight: var(--font-semi-bold);
+}
+
+.google-graph{
+    border-style: solid;
+    border-radius: 2.5rem;
+    padding-inline: 2rem;
+    padding-block: .3rem;
+    color: #ffffff;
+    margin-inline: 3rem;
+    margin-bottom: 3rem;
+}
+
+.google-graph-title{
+    text-align: center;
+    margin-bottom: .2rem;
+}
+
+.google-graph a{
+    color: #ffffff;
+}
+
+.google-graph p{
+    font-size: var(--basic-font-size);
+    margin-top: .2rem;
+    text-align: justify;
+    margin-bottom: .4rem;
+}
+
+.analysis-graph{
+    border-style: solid;
+    border-radius: 2.5rem;
+    padding-inline: 2rem;
+    padding-block: .3rem;
+    color: #ffffff;
+    margin-inline: 3rem;
+    margin-bottom: 3rem;
+}
+
+.analysis-graph-title{
+    text-align: center;
+    margin-bottom: .2rem;
+}
+
+.analysis-graph p{
+    font-size: var(--basic-font-size);
+    margin-top: .2rem;
+    text-align: justify;
+    margin-bottom: .4rem;
+}

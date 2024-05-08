@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="../static/css/header.css"/>
+        <link rel="stylesheet" href="../static/css/base.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="icon" href="../static/images/general/web_icon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+        <title>Home</title>
+    </head>
+    <body>
+        <header class="header">
+            <nav class="nav container">
+                <div class="nav__data">
+                    <a href="{{ url_for('views.home')}}" class="nav__logo">
+                        <img src="../static/images/general/web_icon.png" style="width: 1.5rem;"> AnimeExplorer
+                    </a>
+                    
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line nav__burger"></i>
+                        <i class="ri-close-line nav__close"></i>
+                    </div>
+                </div>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li><a href="{{ url_for('views.home')}}" class="nav__link">Home</a></li>
+                        <li><a href="{{ url_for('views.events')}}" class="nav__link">Events</a></li>
+                        <li><a href="{{ url_for('views.analysis')}}" class="nav__link">Analysis</a></li>
+                        <li><a href="{{ url_for('views.recommend_name')}}" class="nav__link">Recommend</a></li>
+                        <li><a href="{{ url_for('views.anime_list')}}" class="nav__link">Anime List</a></li>
+                        <li><a href="{{ url_for('views.music')}}" class="nav__link">Music</a></li>
+                        <li><a href="{{ url_for('views.discussion')}}" class="nav__link">Discussion</a></li>
+                        <li class="dropdown__item">
+                            <div class="nav__link">
+                                Account <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                            </div>
+                            <ul class="dropdown__menu">
+                                {% if current_user.is_anonymous %}
+                                <li>
+                                    <a href="{{ url_for('auth.sign_up')}}" class="dropdown__link">SignUp</a>
+                                </li>
+                                {% endif %}
+                                {% if current_user.is_anonymous %}
+                                <li>
+                                    <a href="{{ url_for('auth.login')}}" class="dropdown__link">Login</a>
+                                </li>
+                                {% endif %}
+                                {% if current_user.is_authenticated %}
+                                <li>
+                                    <a href="{{ url_for('auth.profile')}}" class="dropdown__link">Profile</a>
+                                </li>
+                                {% endif %}
+                                {% if current_user.is_authenticated and current_user.role == 'admin' %}
+                                <li>
+                                    <a href="{{ url_for('auth.admin')}}" class="dropdown__link">Admin</a>
+                                </li>
+                                {% endif %}
+                                {% if current_user.is_authenticated %}
+                                <li>
+                                    <a href="{{ url_for('auth.logout')}}" class="dropdown__link">Logout</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="flash-messages">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}" id="div_flash" >
+                            {{ message }}
+                            <input type="button" class="close-button" value=&#10006 onclick="removeFlash()" style="float: right">
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <div class="home">
+
+            <section class="sec-1 show-animate">
+                <div class="animate">
+                    <div class="slideshow-container">
+                        <div class="mySlides fade">
+                            <img src="../static/images/general/slide_1.jpg">
+                            <div class="text">Explore more about anime</div>
+                            <div class="learn-button"><a href="{{ url_for('views.anime_list')}}"><button>Learn more</button></a></div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="../static/images/general/slide_2.jpg">
+                            <div class="text">Discuss with others about anime</div>
+                            <div class="learn-button"><a href="{{ url_for('views.discussion')}}"><button>Learn more</button></a></div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="../static/images/general/slide_3.jpg">
+                            <div class="text" style="color: #ffffff;">Get recommendation base on your preference</div>
+                            <div class="learn-button"><a href="{{ url_for('views.recommend_name')}}"><button>Learn more</button></a></div>
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        <div class="down-arrow"><a href="#down" style="color: #ffffff;"><i class="ri-arrow-down-s-line dropdown__arrow"></i></a></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sec-2" id="down">
+                <div class="animate">
+                    <h2>About Us</h2>
+                    <p>
+                        This website is created to provide a platform for anime lovers to discover anime. Users can learn more about the information 
+                        of their favourite animes by going to <a href="{{ url_for('views.anime_list')}}">Anime List</a> page. User can also search for animes based on their name and 
+                        genres. Besides, by going to <a href="{{ url_for('views.recommend_name')}}">Recommend</a> users can get a few recommended anime based on the anime they like. 
+                    </p><br>
+                    <p>
+                        Users can also create an account in <a href="{{ url_for('auth.sign_up')}}">Sign Up</a> to access to more features. You can customise your profile by uploading a picture you like as 
+                        your icon. With an account you can join create dicussion, or even join any discussion in <a href="{{ url_for('views.discussion')}}">Discussion</a> page. It is a 
+                        great chance to meet new anime lover friends!
+                    </p>
+                    <div class="down-arrow-1"><a href="#down2" style="color: #ffffff; text-decoration: none;"><i class="ri-arrow-down-s-line dropdown__arrow"></i></a></div>
+                </div>
+            </section>
+
+            <section class="sec-3" id="down2">
+                <div class="animate">
+                    <div class="content">
+                        <div class="top-anime-header">
+                            <h2>Top 5 Most Popular Anime Now</h2>
+                            <p>The ranking is based on <a href="https://www.imdb.com/?ref_=nv_home" style="color: #ffffff; text-decoration: none;">IMDb</a> website</p>
+                        </div>
+                        {% for anime in top_anime %}
+                            <div class="top-anime-container">
+                                <a href="{{ anime.url }}" target="_blank">
+                                    <h2>{{ anime.name }}</h2>
+                                    <div class="anime-col">
+                                        <div class="anime-image">
+                                            <img src="{{ anime.image_url }}" alt="">
+                                        </div>
+                                        <div class="anime-info">
+                                            <p><span style="font-weight: bold;">Year</span>: {{ anime.years }}</p>
+                                            <p><span style="font-weight: bold;">Rating</span>: {{ anime.rating }}</p>
+                                            <p><span style="font-weight: bold;">Description</span>: {{ anime.description }}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}    
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script type="text/javascript" src="/static/index.js"></script>
+        <script>
+            function removeFlash() {
+              const element = document.getElementById('div_flash');
+              element.remove();
+            }
+        </script>
+        <script>
+            let sections = document.querySelectorAll('section');
+
+            window.onscroll = () => {
+                sections.forEach(sec => {
+                    let top = window.scrollY;
+                    let offset = sec.offsetTop - 150;
+                    let height = sec.offsetHeight;
+
+                    if (top >= offset && top < offset + height) {
+                        sec.classList.add('show-animate');
+                    }
+                    else {
+                        sec.classList.remove('show-animate');
+                    }
+                })
+            }
+        </script>
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+            }
+        </script>
+    </body>
+    <footer>
+        <div class="footer">
+            <div class="row">
+                <a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-line"></i></a>
+                <a href="https://twitter.com/?lang=en" target="_blank"><i class="ri-twitter-line"></i></a>
+                <a href="https://en-gb.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="ri-youtube-fill"></i></a>
+            </div>
+            <div class="row">
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                ANIMEEXPLORER Copyright © 2024 Explorer - All rights reserved || Designed By: Natalie 
+            </div>
+        </div>
+    </footer>
+</html>

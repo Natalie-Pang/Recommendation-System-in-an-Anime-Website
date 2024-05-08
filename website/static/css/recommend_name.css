@@ -1,0 +1,222 @@
+:root{
+    --basic-font-size: 1.1rem;
+    --header-font-size: 1.8rem;
+    --font-semi-bold: 600;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Laptop or computer screen */
+@media screen and (min-width: 1118px) {
+    body{
+        padding-top: 5rem;
+    }
+}
+
+/* phone and small screen */
+@media screen and (max-width: 1118px) {
+    body{
+        padding-top: 3.5rem;
+    }
+}
+
+body{
+    background-color: hsl(219, 25%, 25%);
+}
+
+.slide-container{
+    position: relative;
+}
+
+.slide-container img{
+    object-fit: cover;
+    height: 18rem;
+}
+
+.error-messages{
+    font-size: .8rem;
+    color: rgb(255, 0, 0);
+}
+
+.alert {
+    justify-content: center;
+    align-items: center;
+    background-color: #ff5ce49c;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    display: flex;
+    height: 3rem;
+    font-size: 1.1rem;
+}
+
+.close-button{
+    width: 3rem;
+    background-color: transparent;
+}
+
+.recommend {
+    margin-bottom: 5rem;
+}
+
+.recommend-header{
+    color: #ffffff;
+    text-align: center;
+}
+
+.select-box-wrapper{
+    width: 30rem;
+    margin: 1rem auto 0;
+}
+
+.select-btn, .options li{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.select-btn{
+    font-size: 1.3rem;
+    display: flex;
+    padding-block: .4rem;
+    padding-inline: 1rem;
+    background: #ffffff;
+}
+
+.select-btn i{
+    padding-top: .3rem;
+    margin-left: 1rem;
+    transition: transform 0.3s linear;
+}
+
+.select-box-wrapper.active .select-btn i{
+    transform: rotate(-180deg);
+}
+
+.content{
+    display: none;
+    padding-inline: .4rem;
+    padding-block: .6rem;
+    background-color: #ffffff;
+}
+
+.select-box-wrapper.active .content{
+    display: block;
+}
+
+.content .search{
+    position: relative;
+}
+
+.search i{
+    font-size: 1rem;
+    top: .8rem;
+    left: 1rem;
+    color: #ccc;
+    position: absolute;
+}
+
+.search input{
+    font-size: 1rem;
+    width: 100%;
+    outline: none;
+    padding-inline: 1rem;
+    padding-block: .5rem;
+    padding-left: 3rem;
+    border: 1px solid #b3b3b3;
+    border-radius: .5rem;
+}
+
+.content .options{
+    margin-top: .8rem;
+    max-height: 18rem;
+    overflow-y: auto;
+}
+
+.options li{
+    padding-block: .5rem;
+}
+
+.options li:hover{
+    background: #ccc;
+}
+
+.submit-button button{
+    border: none;
+    border-radius: .3rem;
+    font-size: 1.2rem;
+    padding-block: .4rem;
+    width: 100%;
+    margin-top: .6rem;
+    cursor: pointer;
+}
+
+.chosen-section{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    padding-bottom: .5rem;
+    border-bottom: .2rem solid #DDD
+}
+
+.chosen-section-header{
+    text-align: center;
+    font-size: var(--font-semi-bold);
+    font-weight: var(--font-semi-bold);
+}
+
+.chosen-anime-image{
+    text-align: center;
+}
+
+.chosen-section img{
+    object-fit: cover;
+    width: 10rem;
+}
+
+.chosen-anime{
+    font-size: var(--basic-font-size);
+}
+
+.recommend-section-header h2{
+    font-size: var(--header-font-size);
+    font-weight: var(--font-semi-bold);
+}
+
+.recommend-section{
+    display: flex;
+    margin-top: .2rem;
+    margin-inline: 3rem;
+    margin-bottom: 2rem;
+}
+
+.recommend-section-header{
+    text-align: center;
+    color: #ffffff;
+}
+
+.recommend-anime-image{
+    text-align: center;
+}
+
+.recommend-anime-image img{
+    object-fit: cover;
+    width: 11rem;
+    max-height: 15rem;
+}
+
+.recommend-anime{
+    color: #ffffff;
+    padding-inline: .2rem;
+    padding-block: .2rem;
+    border-style: solid;
+    border-radius: .3rem;
+    margin-inline: .2rem;
+
+}

@@ -1,0 +1,188 @@
+:root{
+    --basic-font-size: 1.1rem;
+    --header-font-size: 1.8rem;
+    --font-semi-bold: 600;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Laptop or computer screen */
+@media screen and (min-width: 1118px) {
+    body{
+        padding-top: 5rem;
+    }
+}
+
+/* phone and small screen */
+@media screen and (max-width: 1118px) {
+    body{
+        padding-top: 3.5rem;
+    }
+}
+
+body{
+    background-color: hsl(219, 25%, 25%);
+}
+
+.news-header{
+    text-align: center;
+    color: #ffffff;
+    padding-bottom: .5rem;
+    border-bottom: .2rem solid #DDD
+}
+
+.news-header h1{
+    font-size: var(--header-font-size);
+    font-weight: var(--font-semi-bold);
+}
+
+.news-header p{
+    font-size: var(--basic-font-size);
+}
+
+.news-content{
+    margin-inline: 5rem;
+}
+
+.content{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 5rem;
+    padding-block: 1rem;
+    border-bottom: .1rem solid #DDD
+}
+
+.top-anime-header {
+    text-align: center;
+    color: #ffffff;
+    margin-top: .5rem;
+}
+
+.top-anime-header h2{
+    font-size: var(--header-font-size);
+    font-weight: var(--font-semi-bold);
+}
+
+.top-anime-container{
+    display: block;
+    width: 100%;
+    color: #000000;
+    background-color: #ffffff;
+    padding-block: 1rem;
+    padding-inline: 3rem;
+    border-bottom: .1rem solid #DDD
+}
+
+.top-anime-container:hover{
+    background-color: #f0f0f0;
+}
+
+.top-anime-container h2{
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: var(--font-semi-bold);
+}
+
+.top-anime-container p{
+    color: #000000;
+}
+
+.anime-col{
+    display: flex;
+}
+
+.anime-col .anime-image{
+    margin-right: 3%;
+}
+
+.anime-col .anime-image img{
+    width: 5rem;
+    object-fit: cover;
+} 
+
+.anime-col .anime-info{
+    flex: 1;
+}
+
+.anime-col .anime-info p{
+    font-size: var(--basic-font-size);
+}
+
+.upcoming-events-header{
+    text-align: center;
+}
+
+.upcoming-events-header h2{
+    font-size: var(--header-font-size);
+    font-weight: var(--font-semi-bold);
+    color: #ffffff;
+}
+
+.upcoming-events-header p{
+    font-size: var(--basic-font-size);
+    color: #ffffff;
+}
+
+.event-container{
+    background-color: #ffffff;
+    padding-block: 1rem;
+    padding-inline: 3rem;
+    border-bottom: .1rem solid #DDD
+}
+
+.event-container:hover{
+    background-color: #f0f0f0;
+}
+
+.event-col{
+    display: flex;
+}
+
+.event-container h2{
+    font-size: 1.6rem;
+    font-weight: var(--font-semi-bold);
+    color: #000000;
+}
+
+.event-container p{
+    font-size: var(--basic-font-size);
+    color: #000000;
+}
+
+.event-container .event-image{
+    margin-right: 3%;
+}   
+
+.event-container .event-image img{
+    width: 7rem;
+    object-fit: cover;
+}
+
+.choose-location{
+    margin-block: 1rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.choose-location label{
+    font-size: 1.3rem;
+}
+
+.choose-location select{
+    font-size: var(--basic-font-size);
+}
+
+.choose-location button{
+    background: #ffffff;
+    color: #000000;
+    font-size: var(--basic-font-size);
+    border: none;
+    padding-inline: .2rem;
+    border-radius: .2rem;
+}

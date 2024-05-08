@@ -1,0 +1,96 @@
+:root{
+    --basic-font-size: 1rem;
+    --header-font-size: 1.8rem;
+    --font-semi-bold: 600;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Laptop or computer screen */
+@media screen and (min-width: 1118px) {
+    body{
+        padding-top: 5rem;
+    }
+}
+
+/* phone and small screen */
+@media screen and (max-width: 1118px) {
+    body{
+        padding-top: 3.5rem;
+    }
+}
+
+body{
+    background-color: hsl(219, 25%, 25%);
+}
+
+.create-discussion{
+    font-size: var(--basic-font-size);
+    min-height: 100vh;
+}
+
+.create-header{
+    color: #ffffff;
+    text-align: center;
+    margin-block: 1rem;
+}
+
+.create-container{
+    margin-inline: 2rem;
+    background-color: #e0e0e0;
+    padding-inline: 3rem;
+    padding-block: 2rem;
+    border-radius: 3rem;
+    margin-top: 2rem;
+}
+
+.create-title{
+    margin-bottom: 1rem;
+}
+
+.create-title label{
+    font-size: 1.1rem;
+    font-weight: var(--font-semi-bold);
+}
+
+.create-message{
+    margin-bottom: 1rem;
+}
+
+.create-message label{
+    font-size: 1.1rem;
+    font-weight: var(--font-semi-bold);
+}
+
+.input-box input{
+    border: none;
+    border-radius: .8rem;
+    padding-inline: .5rem;
+    height: 2rem;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.submit-button{
+    text-align: center;
+}
+
+.submit-button button{
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    font-size: 1.1rem;
+    border: none;
+    padding-inline: .3rem;
+    border-radius: 1.2rem;
+    background: hsl(219, 50%, 66%);
+    margin-top: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,158 @@
+:root{
+    --basic-font-size: 1.1rem;
+    --header-font-size: 1.8rem;
+    --font-semi-bold: 600;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Laptop or computer screen */
+@media screen and (min-width: 1118px) {
+    body{
+        padding-top: 5rem;
+    }
+}
+
+/* phone and small screen */
+@media screen and (max-width: 1118px) {
+    body{
+        padding-top: 3.5rem;
+    }
+}
+
+body{
+    background-color: hsl(219, 25%, 25%);
+}
+
+.anime-details{
+    margin-inline: 3rem;
+}
+
+.anime-intro{
+    color: #ffffff;
+    font-size: var(--basic-font-size);
+    padding-bottom: 1rem;
+    border-bottom: .2rem solid #DDD
+}
+
+.anime-header h1{
+    text-align: center;
+    font-size: var(--header-font-size);
+}
+
+.anime-header{
+    margin-bottom: 1rem;
+    padding: .5rem;
+    border-bottom: .2rem solid #DDD
+}
+
+.anime-col{
+    display: flex;
+}
+
+.anime-picture img{
+    object-fit: cover;
+    width: 23rem;
+    margin-left: 3rem;
+    margin-right: 6rem;
+}
+
+.anime-info p{
+    margin-block: .4rem;
+}
+
+.reviews-header {
+    margin-top: .5rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.reviews-header h2{
+    font-size: var(--header-font-size);
+}
+
+.all-reviews{
+    margin-inline: 3rem;;
+}
+
+.review-container{
+    background-color: #ccc;
+    margin-block: 1.3rem;
+    padding-inline: 2rem;
+    padding-block: 1rem;
+    border-radius: .5rem;
+}
+
+.existing-reviews h2{
+    font-size: var(--header-font-size);
+}
+
+.user-info{
+    display: flex;
+    margin-bottom: .5rem;
+}
+
+.user-info img{
+    object-fit: cover;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 1.25rem;
+    margin-right: .3rem;
+}
+
+.user-info p{
+    padding-top: .5rem;
+}
+
+.leave-review{
+    margin-inline: 3rem;
+    color: #ffffff;
+    font-size: var(--basic-font-size);
+}
+
+.leave-review textarea{
+    border-radius: .8rem;
+    padding-inline: .5rem;
+    padding-block: .3rem;
+    width: 100%;
+    margin-top: .5rem;
+}
+
+.leave-review-button{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.leave-review-button button{
+    font-size: var(--basic-font-size);
+    background-color: #6ca2ff;
+    padding-block: .2rem;
+    padding-inline: .1rem;
+    border: none;
+    border-radius: .3rem;
+}
+
+.delete-button {
+    position: absolute;
+    right: 9rem;
+}
+
+.delete-button button{
+    font-size: .9rem;
+    border: none;
+    color: red;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.no-reviews{
+    text-align: center;
+    color: #ffffff;
+    font-size: var(--basic-font-size);
+}

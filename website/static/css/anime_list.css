@@ -1,0 +1,142 @@
+:root{
+    --basic-font-size: 1.1rem;
+    --header-font-size: 1.8rem;
+    --font-semi-bold: 600;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Laptop or computer screen */
+@media screen and (min-width: 1118px) {
+    body{
+        padding-top: 5rem;
+    }
+}
+
+/* phone and small screen */
+@media screen and (max-width: 1118px) {
+    body{
+        padding-top: 3.5rem;
+    }
+}
+
+body{
+    background-color: hsl(219, 25%, 25%);
+}
+
+.anime-list-title{
+    text-align: center;
+    font-size: var(--basic-font-size);
+    color: #ffffff;
+}
+
+.anime-list-title h1{
+    font-size: var(--header-font-size);
+    font-weight: var(--font-semi-bold);
+}
+
+.anime-list-section{
+    margin-inline: 2rem;
+}
+
+.anime-container{
+    background-color: #e0e0e0;
+    color: #000000;
+    padding-inline: 2rem;
+    padding-block: 1.3rem;
+    border-radius: .8rem;
+    margin-block: .6rem;
+}
+
+.anime-container a{
+    color: #000000;
+}
+
+.anime-col{
+    display: flex;
+}
+
+.anime-info{
+    font-size: var(--basic-font-size);
+
+}
+
+.anime-picture img{
+    object-fit: cover;
+    width: 6rem;
+    margin-left: 1rem;
+    margin-right: 3rem;
+}
+
+.anime-description{
+    text-align: justify;
+}
+
+.pagination{
+    font-size: 1.1rem;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: .8rem;
+}
+
+.pagination a{
+    color: #ffffff;
+}
+
+.pagination .page-item.active a {
+    color: #ff29e2;
+}
+
+.pagination .page-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.search-box {
+    margin-inline: 2rem;
+    margin-bottom: 1rem;
+}
+
+.search-box form {
+    display: flex;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 8px;
+}
+
+.search-box button {
+    padding: 1rem 1.3rem;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-box{
+    display: flex;
+    justify-content: center;
+}
+
+.filter-box label{
+    color: #ffffff;
+}
+
+.filter-box select{
+    width: 12rem;
+}
+
+.filter-box button{
+    cursor: pointer;
+    border: none;
+    background-color: #4CAF50;
+    padding-block: .2rem;
+    padding-inline: .6rem;
+}
